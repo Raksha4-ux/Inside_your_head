@@ -364,6 +364,7 @@ function updatePanel(ch, resp) {
 
 /* ── Main: fetch all emotion responses ───────────────────── */
 async function runEmotions() {
+  console.log("RUN EMOTIONS TRIGGERED");
   const idea = document.getElementById('idea-input').value.trim();
   if (!idea || isLoading) return;
 
