@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside Your Head</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="page">
+
+    <header>
+      <div class="logo">
+        <span class="w1">Inside</span>
+        <span class="w2"> </span>
+        <span class="w3">Your</span>
+        <span class="w2"> </span>
+        <span class="w5">Head</span>
+      </div>
+      <div class="tagline">✦ every emotion has something to say ✦</div>
+    </header>
+
+    <div class="input-shell">
+      <label class="input-label" for="idea-input">💭 What's on your mind?</label>
+      <div class="input-row">
+        <textarea id="idea-input" placeholder="Type any idea, decision, or thought…" rows="2" maxlength="300"></textarea>
+        <button class="go-btn" id="go-btn" onclick="runEmotions()">Feel it ✦</button>
+      </div>
+    </div>
+
+    <div class="hq" id="hq">
+      <div class="tabs-row" id="tabs-row"></div>
+      <div class="panel" id="panel">
+        <div class="panel-glow" id="panel-glow"></div>
+        <div class="panel-inner" id="panel-inner"></div>
+      </div>
+      <button class="reset-btn" id="reset-btn" onclick="resetAll()">↺ try another idea</button>
+    </div>
+
+  </div>
+
+  <script src="characters.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
