@@ -1,6 +1,6 @@
 // api/chat.js — serverless function, runs on Vercel's servers
 // The API key lives here, never exposed to the browser
-
+const fetch = require('node-fetch');
 module.exports = async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
