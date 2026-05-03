@@ -1,7 +1,7 @@
 // api/chat.js — serverless function, runs on Vercel's servers
 // The API key lives here, never exposed to the browser
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
