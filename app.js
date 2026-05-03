@@ -391,6 +391,7 @@ async function runEmotions() {
     });
 
     const data = await res.json();
+    console.log("FULL DATA FROM SERVER:", JSON.stringify(data));
     const raw = data.text;
     console.log("RAW FROM SERVER:", raw);
 
