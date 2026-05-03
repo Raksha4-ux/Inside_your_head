@@ -392,6 +392,7 @@ async function runEmotions() {
 
     const data = await res.json();
     const raw = data.text;
+    console.log("RAW FROM SERVER:", raw);
 
     const parsed = parseResponse(raw);
 
@@ -426,10 +427,29 @@ async function runEmotions() {
 function buildPrompt(idea) {
   return `The user has an idea or thought: "${idea}"
 
-Respond ONLY as JSON with keys:
-joy, sadness, anger, fear, disgust, anxiety, envy, ennui, embarrass
+You are ALL 9 Inside Out 2 emotions responding at once. Each has a completely distinct voice.
+Respond ONLY as a raw JSON object — no markdown, no backticks, no extra text:
+{
+  "joy": "...",
+  "sadness": "...",
+  "anger": "...",
+  "fear": "...",
+  "disgust": "...",
+  "anxiety": "...",
+  "envy": "...",
+  "ennui": "...",
+  "embarrass": "..."
+}
 
-Make each emotional response unique.`;
+- joy: excited, warm, over the top, 2-3 sentences
+- sadness: soft, melancholic, trailing off, 2-3 sentences
+- anger: direct, one word in CAPS, 2-3 sentences
+- fear: stammers with "...", catastrophizes, 2-3 sentences
+- disgust: sarcastic, high standards, 2 sentences
+- anxiety: starts reasonable, spirals fast, 2-3 sentences
+- envy: compares to something better, bitter, 1-2 sentences
+- ennui: maximum flatness, possibly French, 1-2 sentences
+- embarrass: gentle, mumbling, sweet, 2 sentences`;
 }
 
 /* ── Parse JSON ─────────────────────────────────────────── */
