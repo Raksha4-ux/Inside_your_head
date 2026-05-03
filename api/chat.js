@@ -27,7 +27,9 @@ module.exports = async function handler(req, res) {
     );
 
     const data = await response.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    console.log("Gemini raw data:", JSON.stringify(data));
+const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    
     res.status(200).json({ text });
 
   } catch (err) {
